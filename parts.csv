@@ -1,0 +1,37 @@
+part_ID,part_type,weight,description
+L-Drago II FB,Face Bolt,1,"A face bolt that marks the L-Drago Beyblade, symbolizing its aggressive dragon spirit and tailored for attack-oriented customization."
+Pegasus II FB,Face Bolt,1,"This face bolt signifies the Pegasus Beyblade, embodying the swift and powerful mythical creature for speed and attack enhancements."
+Leone I FB,Face Bolt,1,"Represents the Leone Beyblade, featuring a lion emblem for defense-oriented Beyblades, emphasizing resilience and stability."
+Sagittario III FB,Face Bolt,1,"Marks the Sagittario Beyblade with an archer symbol, focusing on stamina and endurance in prolonged battles."
+Orion FB,Face Bolt,1,"Symbolizes the Orion Beyblade, designed with balance in mind, incorporating the hunters precision and versatility."
+L-Drago II,Energy Ring,6.03,"An energy ring designed for aggressive attacking strategies, enhancing left-spin interactions and impact force"
+Pegasus II,Energy Ring,3.1,"Optimized for speed and rapid attacks, this energy ring facilitates quick, powerful strikes against opponents."
+Leone,Energy Ring,3,"Focuses on defense, adding weight and stability to absorb and deflect incoming attacks effectively."
+Sagittario II,Energy Ring,2.8,"Engineered for stamina, it helps maintain rotational momentum longer, ideal for endurance matches."
+Orion,Energy Ring,3.1,"A balanced energy ring that provides a mix of attack, defense, and stamina qualities for versatile performance."
+Meteo,Fusion Wheel,28.31,Designed to create unpredictable movement patterns and enhance attack capabilities through aerodynamic and weight distribution adjustments.
+Galaxy,Fusion Wheel,29.4,"Optimized for high-speed attacks, its design focuses on aggressive strikes and rapid movements."
+Rock,Fusion Wheel,31.4,"A heavily weighted fusion wheel that prioritizes defense, offering enhanced protection against attacks with its solid construction."
+Flash,Fusion Wheel,45.6,"Built for explosive attack power, it features a design that maximizes contact impact with opponents."
+Phantom,Fusion Wheel,42.79,"Offers mode-changing capabilities, allowing bladers to switch between aggressive attack modes and more defensive or stamina-focused strategies."
+LW105,Spin Track,1.5,A lightweight spin track designed to lower the center of gravity and increase maneuverability and speed.
+W105,Spin Track,1.1,"Features winged designs to provide additional lift and stability, enhancing the Beyblade's aerial capabilities and defense."
+145,Spin Track,4.5,"A standard-height spin track that offers a balanced performance, suitable for a variety of battling styles."
+230,Spin Track,4.1,"One of the tallest spin tracks available, providing a significant height advantage to dodge lower attacks and strike from above."
+LF,Performance Tip,0.71,"Left Flat, designed for aggressive, fast-paced movement in left-spin Beyblades, enhancing mobility and attack potential."
+R2F,Performance Tip,0.8,"Right Rubber Flat, a performance tip for right-spin Beyblades that enables rapid, aggressive movement with increased grip."
+WB,Performance Tip,0.7,"Wide Ball, focused on stability and defense, its wide base helps maintain balance and resist knockouts."
+WD,Performance Tip,0.7,"Wide Defense, known for its balance between stamina and defense, it provides steady performance with a wider tip for enhanced endurance."
+B:D,Performance Tip,3.5,"Bearing Drive, incorporates bearings to reduce friction, significantly improving stamina and stability for enduring battles."
+B:D Track,Spin Track,0,This part only goes together with B:D Performance Tip.
+Virgo FB,Face Bolt,1,It features the Virgo constellation design.
+Virgo,Energy Ring,2.8,Designed for even weight distribution with a wave-like design for stamina.
+GB145,Spin Track,4.5,The GB145 (Gravity Ball 145) contains two metal balls for increased stability and defense.
+BS,Performance Tip,0.6,The Ball Sharp (BS) provides stability and the sharp point reduces friction for longer spins.
+Earth,Fusion Wheel,32.5,Known for its high density and is defense focused with a 3 layer metal construction.
+Twisted,Fusion Wheel,47,It can deflect attacks with ease given that it is one of the heaviest fusion wheels.
+Tempo FB,Face Bolt,1,It features the Horologium constellation design.
+Tempo,Energy Ring,2.8,It has a design that complemented the Twisted wheel for defense and balance.
+Byxis FB,Face Bolt,1,Decorated with the Byxis design that represents its constellation.
+Byxis,Energy Ring,2.8,Features a sleek and aerodynamic design to minimize air resistance and enhance stamina.
+Flame,Fusion Wheel,30,The flame fusion wheel is lightweight and aerodynamic as it is designed for endurance and speed.

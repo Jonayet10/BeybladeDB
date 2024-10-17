@@ -1,0 +1,6 @@
+battle_ID,tournament_name,battle_date,location,player1_ID,player2_ID,player1_beyblade_ID,player2_beyblade_ID,winner_ID
+301,WBBA Prelim,2022-02-02 23:15:30,NYC,101,105,201,205,201
+302,WBBA Prelim,2022-02-02 23:15:30,NYC,102,103,202,203,202
+303,WBBA Prelim,2022-02-02 23:15:30,NYC,104,103,204,203,203
+304,WBBA Prelim,2022-02-02 23:15:30,NYC,101,102,201,202,202
+305,WBBA Prelim,2022-02-02 23:15:30,NYC,104,105,204,205,205
