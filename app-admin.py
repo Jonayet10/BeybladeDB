@@ -310,17 +310,17 @@ def view_all_battle_results_for_user(user_name):
     """
     cursor.execute(query, (user_name, user_name))
 
+    headers = ["Battle ID", "Tournament Name", "Date", "Location",
+                   "Player 1 Username", "Player 2 Username",
+                   "Player 1 Beyblade Name", "Player 2 Beyblade Name",
+                   "Player 1 Beyblade ID", "Player 2 BeyBlade ID", "Winner ID"]
+    
     # Fetching all results
     results = cursor.fetchall()
     if not results:
         print(Fore.RED + "\nNo battles found for user!")
     else:
-        headers = ["Battle ID", "Tournament Name", "Date", "Location",
-                   "Player 1 Username", "Player 2 Username",
-                   "Player 1 Beyblade Name", "Player 2 Beyblade Name",
-                   "Player 1 Beyblade ID", "Player 2 BeyBlade ID", "Winner ID"]
-
-    print(tabulate(results, headers=headers, tablefmt="grid"))
+        print(tabulate(results, headers=headers, tablefmt="grid"))
     # Closing cursor and connection
     cursor.close()
     conn.close()
