@@ -139,16 +139,51 @@ def add_battle(tournament_name, battle_date, location, player1_id, player2_id,
         player2_beyblade_id (int): ID of the Beyblade used by the 2nd player.
         winner_id (int): User ID of the winner.
 
-    Return value: None..
+    Return value: None.
     """
     cursor = conn.cursor()
 
     # Validate the date format
     try:
-        datetime.strptime(battle_date, "%Y-%m-%d %H:%M:%S")
+        if len(battle_date.strip()) == 10:  # If only date is provided (YYYY-MM-DD)
+            battle_date += " 00:00:00"  # Add default time
+        datetime.strptime(battle_date, "%Y-%m-%d %H:%M:%S")  # Validate date format
     except ValueError:
         print(Fore.RED + 
-              f"\nInvalid date format '{battle_date}'. Please use 'YYYY-MM-DD HH:MM:SS'.")
+              f"\nInvalid date format '{battle_date}'. Please use 'YYYY-MM-DD' "
+              "or 'YYYY-MM-DD HH:MM:SS'.")
+        return
+
+    # Validate player IDs and Beyblade IDs to ensure they are integers
+    try:
+        player1_id = int(player1_id)
+        player2_id = int(player2_id)
+        player1_beyblade_id = int(player1_beyblade_id)
+        player2_beyblade_id = int(player2_beyblade_id)
+        if winner_id:  # Only convert winner_id if it is provided
+            winner_id = int(winner_id)
+    except ValueError:
+        print(Fore.RED + "\nInvalid input. Player IDs, Beyblade IDs, and Winner ID "
+              "must be integers.")
+        return
+    
+    # Check if player1_id exists in the 'users' table
+    cursor.execute("SELECT COUNT(*) FROM users WHERE user_ID = %s", (player1_id,))
+    player1_exists = cursor.fetchone()[0]
+
+    # Check if player2_id exists in the 'users' table
+    cursor.execute("SELECT COUNT(*) FROM users WHERE user_ID = %s", (player2_id,))
+    player2_exists = cursor.fetchone()[0]
+
+    if not player1_exists or not player2_exists:
+        missing_players = []
+        if not player1_exists:
+            missing_players.append(f"Player 1 (ID: {player1_id})")
+        if not player2_exists:
+            missing_players.append(f"Player 2 (ID: {player2_id})")
+        
+        print(Fore.RED + f"\nError: The following players are not found in the database: "
+              + ", ".join(missing_players))
         return
     
     try:
