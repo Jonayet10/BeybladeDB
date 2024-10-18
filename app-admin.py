@@ -20,6 +20,9 @@ from tabulate import tabulate
 import colorama
 from colorama import Fore
 
+# To validate date format
+from datetime import datetime
+
 colorama.init(autoreset=True)
 
 # Debugging flag to print errors when debugging that shouldn't be visible
@@ -139,6 +142,15 @@ def add_battle(tournament_name, battle_date, location, player1_id, player2_id,
     Return value: None..
     """
     cursor = conn.cursor()
+
+    # Validate the date format
+    try:
+        datetime.strptime(battle_date, "%Y-%m-%d %H:%M:%S")
+    except ValueError:
+        print(Fore.RED + 
+              f"\nInvalid date format '{battle_date}'. Please use 'YYYY-MM-DD HH:MM:SS'.")
+        return
+    
     try:
         cursor.callproc('sp_record_battle', (tournament_name, battle_date, location,
                                              player1_id, player2_id,
@@ -147,7 +159,14 @@ def add_battle(tournament_name, battle_date, location, player1_id, player2_id,
         conn.commit()
         print(Fore.BLUE + "\nNew battle result added successfully.")
     except mysql.connector.Error as err:
-        print(Fore.RED + f"\nError: {err}")
+        # Check for the foreign key error
+        if err.errno == errorcode.ER_NO_REFERENCED_ROW_2:
+            # Foreign key constraint failed
+            print(Fore.RED + f"\nError: Player {player1_id} or {player2_id} "
+                  "does not have the specified Beyblade in their collection.")
+        else:
+            # Handle other errors
+            print(Fore.RED + f"\nError: {err}")
     finally:
         cursor.close()
 
@@ -178,6 +197,7 @@ def view_users():
         print(Fore.RED + f"\nError: {err}")
     finally:
         cursor.close()
+
 
 def view_user_beyblades(user_name):
     """
@@ -802,9 +822,6 @@ def login():
                 sys.exit(1)
             else:
                 sys.stderr("\nError logging in.")
-
-# Add user to 'user_info' and 'users' tables
-
 
 def add_user(username, email, password, is_admin):
     """
