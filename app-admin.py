@@ -875,7 +875,7 @@ def show_options(username):
     print('  (o) View battle results for a location')   
     print('  (p) View current users')   
     print('  (r) View battle results for a user')   
-    print('  (s) Print Beyblades leaderboard')  
+    print('  (s) View the leaderboard')  
     print('\n')
 
     print('  (q) - quit')
