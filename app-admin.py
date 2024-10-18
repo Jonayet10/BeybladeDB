@@ -244,7 +244,7 @@ def add_beyblade_part(part_ID, part_type, weight, description):
     try:
         cursor.execute(sql, data)
         conn.commit()  # Commit the transaction to save the changes
-        print(Fore.BLUE + f"\nAdded new part: {part_ID} successfully.")
+        print(Fore.BLUE + f"\nAdded new part: {part_ID} successfully")
     except mysql.connector.Error as err:
         print(Fore.RED + f"\nError: {err}")
     finally:
@@ -536,7 +536,7 @@ def add_user_beyblade(
         if user_id_row is not None:
             user_id = user_id_row[0]
         else:
-            print(Fore.RED + f"\nError: User '{username}' not found.")
+            print(Fore.RED + f"\nError: User '{username}' not found")
             return
     except mysql.connector.Error as err:
         print(Fore.RED + f"\nError fetching user ID: {err}")
@@ -587,7 +587,7 @@ def heaviest_beyblade_for_type(beyblade_type):
         else:
             print(Fore.RED + f"\nNo Beyblade found with ID: {beyblade_id}")
     else:
-        print(Fore.RED + f"\nNo heaviest Beyblade found for type '{beyblade_type}'.")
+        print(Fore.RED + f"\nNo heaviest Beyblade found for type '{beyblade_type}'")
 
     cursor.close()
     conn.close()
@@ -622,7 +622,7 @@ def view_all_beyblade_parts():
                         'Description'],
                     tablefmt="grid"))
         else:
-            print(Fore.RED + "\nNo parts found in the database.")
+            print(Fore.RED + "\nNo parts found in the database")
     except mysql.connector.Error as err:
         print(Fore.RED + f"\nError: {err}")
     finally:
@@ -651,7 +651,7 @@ def view_all_tournament_names():
             for tournament in tournaments:
                 print(Fore.BLUE + tournament[0])  # Print each tournament name
         else:
-            print(Fore.RED + "\nNo tournaments found in the database.")
+            print(Fore.RED + "\nNo tournaments found in the database")
     except mysql.connector.Error as err:
         print(Fore.RED + f"\nError: {err}")
     finally:
@@ -678,7 +678,7 @@ def view_all_battle_locations():
             for location in locations:
                 print(Fore.BLUE + location[0])  # Print each location
         else:
-            print(Fore.RED + "\nNo battle locations found in the database.")
+            print(Fore.RED + "\nNo battle locations found in the database")
     except mysql.connector.Error as err:
         print(Fore.RED + f"\nError: {err}")
     finally:
@@ -711,7 +711,7 @@ def beyblade_leaderboard():
             headers = ['Beyblade ID', 'Name', 'Type', 'Wins']
             print(tabulate(results, headers=headers, tablefmt="grid"))
         else:
-            print(Fore.RED + "\nNo battle results found.")
+            print(Fore.RED + "\nNo battle results found")
     except mysql.connector.Error as err:
         print(Fore.RED + f"\nError: {err}")
     finally:
@@ -816,7 +816,7 @@ def add_user(username, email, password, is_admin):
         # Add user to users table
         cursor.execute(sql_users, (username, email, is_admin))
         conn.commit()
-        print(Fore.Green + f"\nUser '{username}' added successfully.")
+        print(Fore.Green + f"\nUser '{username}' added successfully")
     except mysql.connector.Error as err:
         print(Fore.RED + f"\nError: {err}")
 
