@@ -705,11 +705,19 @@ def add_user_beyblade(
     """
     cursor = conn.cursor()
 
+    # Valdiate Beyblade type
     valid_types = ['Attack', 'Defense', 'Stamina', 'Balance']
     if type not in valid_types:
         print(Fore.RED + f"\nError: Invalid Beyblade type '{type}'. "
             f"Please enter one of {valid_types}."
         )
+
+     # Validate Beyblade series
+    valid_series = ['Metal Fusion', 'Metal Masters', 'Metal Fury']
+    if series not in valid_series:
+        print(Fore.RED + f"\nError: Invalid Beyblade series '{series}'. "
+              f"Please enter one of {valid_series}.")
+        return
 
     # SQL query to fetch user_id based on username
     sql_get_user_id = "SELECT user_ID FROM users WHERE username = %s;"
