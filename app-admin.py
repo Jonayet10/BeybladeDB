@@ -288,8 +288,23 @@ def add_beyblade_part(part_ID, part_type, weight, description):
 
     Return value: None.
     """
-
     cursor = conn.cursor()
+
+    # Validate part type input
+    valid_part_types = ['Face Bolt', 'Energy Ring', 'Fusion Wheel', 'Spin Track', 'Performance Tip']
+    
+    if part_type not in valid_part_types:
+        print(Fore.RED + f"\nError: Invalid part type '{part_type}'. "
+              f"Please enter one of the following: {', '.join(valid_part_types)}")
+        return  # Exit the function if the part type is invalid
+    
+    # Validate the weight input
+    try:
+        weight = float(weight)
+    except ValueError:
+        print(Fore.RED + "\nInvalid weight. Please enter a numeric value.")
+        return  # Exit the function if the weight is invalid
+        
     # SQL INSERT statement for the parts table
     sql = ("INSERT INTO parts (part_ID, part_type, weight, description) "
            "VALUES (%s, %s, %s, %s)")
