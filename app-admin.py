@@ -947,7 +947,7 @@ def show_options(username):
             weight = float(weight)
         except ValueError:
             print("\nInvalid weight. Please enter a numeric value.")
-            show_options()
+            show_options(username)
             return
         add_beyblade_part(part_ID, part_type, weight, description)
         show_options(username)
