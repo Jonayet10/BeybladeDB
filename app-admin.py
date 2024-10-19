@@ -882,7 +882,7 @@ def add_user(username, email, password, is_admin):
         # Add user to users table
         cursor.execute(sql_users, (username, email, is_admin))
         conn.commit()
-        print(Fore.Green + f"\nUser '{username}' added successfully")
+        print(Fore.GREEN + f"\nUser '{username}' added successfully")
     except mysql.connector.Error as err:
         print(Fore.RED + f"\nError: {err}")
 
