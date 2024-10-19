@@ -794,14 +794,14 @@ def show_options(username):
     if ans == 'q':
         quit_ui()
     elif ans == 'a':
-        print("\nCREATING A NEW ACCOUNT.")
+        print(Fore.BLUE + "\nCREATING A NEW ACCOUNT.")
         new_username = input('Enter username: ')
         email = input('Enter email: ')
         password = input('Enter password: ')
         add_user(new_username, email, password, 0)
         show_options(username)
     elif ans == 'b':
-        print("\nADDING A BEYBLADE TO YOUR ACCCOUNT.")
+        print(Fore.BLUE + "\nADDING A BEYBLADE TO YOUR ACCCOUNT.")
         name = input('Enter Beyblade name: ')
         type = input(
             'Enter Beyblade type (Attack, Defense, Stamina, Balance): ')
