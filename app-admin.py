@@ -98,7 +98,30 @@ def add_beyblade(beyblade_ID, name, type, is_custom, series, face_bolt_ID,
     Return value: none.
     """
     cursor = conn.cursor()
-    # Corrected SQL INSERT statement with accurate column names
+
+    # Validate Beyblade type
+    valid_types = ['Attack', 'Defense', 'Stamina', 'Balance']
+    if type not in valid_types:
+        print(Fore.RED + f"\nError: Invalid Beyblade type '{type}'. "
+            f"Please enter one of {valid_types}."
+        )
+
+    # Validate Beyblade series
+    valid_series = ['Metal Fusion', 'Metal Masters', 'Metal Fury']
+    if series not in valid_series:
+        print(Fore.RED + f"\nError: Invalid Beyblade series '{series}'. "
+              f"Please enter one of {valid_series}.")
+        return
+    
+    # Validate that parts exist in the 'parts' table
+    part_ids = [face_bolt_ID, energy_ring_ID, fusion_wheel_ID, spin_track_ID, performance_tip_ID]
+    for part_id in part_ids:
+        cursor.execute("SELECT COUNT(*) FROM parts WHERE part_ID = %s", (part_id,))
+        if cursor.fetchone()[0] == 0:
+            print(Fore.RED + f"\nError: Part ID '{part_id}' does not exist in the parts table.")
+            return
+            
+    # SQL INSERT statement with accurate column names
     sql = (
         "INSERT INTO beyblades (beyblade_ID, name, type, is_custom, series, "
         "face_bolt_ID, energy_ring_ID, fusion_wheel_ID, spin_track_ID, "
