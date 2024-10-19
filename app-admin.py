@@ -612,6 +612,14 @@ def add_user_beyblade(
               f"Please enter one of {valid_series}.")
         return
 
+    # Validate that parts exist in the 'parts' table
+    part_ids = [face_bolt_id, energy_ring_id, fusion_wheel_id, spin_track_id, performance_tip_id]
+    for part_id in part_ids:
+        cursor.execute("SELECT COUNT(*) FROM parts WHERE part_ID = %s", (part_id,))
+        if cursor.fetchone()[0] == 0:
+            print(Fore.RED + f"\nError: Part ID '{part_id}' does not exist in the parts table.")
+            return
+
     # SQL query to fetch user_id based on username
     sql_get_user_id = "SELECT user_ID FROM users WHERE username = %s;"
     try:
