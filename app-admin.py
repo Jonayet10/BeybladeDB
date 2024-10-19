@@ -904,6 +904,7 @@ def login():
             else:
                 sys.stderr("\nError logging in.")
 
+
 def add_user(username, email, password, is_admin):
     """
     Adds the user to the users and user_info table.
