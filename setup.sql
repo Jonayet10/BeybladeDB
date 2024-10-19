@@ -1,4 +1,4 @@
--- This scripts sets up the database schema for beybladedb.
+-- This script sets up the database schema for beybladedb.
 
 -- Remove existing tables to prevent errors on creation
 DROP TABLE IF EXISTS battles;
