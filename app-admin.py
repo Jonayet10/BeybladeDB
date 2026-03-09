@@ -1105,7 +1105,7 @@ def show_options(username):
         player2_id = input('Enter Player 2 ID: ')
         player1_beyblade_id = input('Enter Beyblade-Player ID: ')
         player2_beyblade_id = input('Enter Beyblade-Player ID: ')
-        winner_id = input('Enter Winner ID (leave blank if draw): ')
+        winner_id = input('Enter Winner Beyblade-Player ID (leave blank if draw): ')
         winner_id = winner_id if winner_id.strip() != '' else None
         add_battle(
             tournament_name,
