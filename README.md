@@ -46,7 +46,7 @@ It is advised to create a virtual environment.
 ```bash
 $ python -m venv myenv
 $ source myenv/bin/activate
-$ pip install mysql-connector-python tabulate colorama
+$ pip install -r requirements.txt
 ```
 
 ### 2. Configure Environment Variables
