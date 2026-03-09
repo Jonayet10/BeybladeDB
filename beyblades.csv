@@ -1,0 +1,9 @@
+beyblade_ID,name,type,is_custom,series,face_bolt_ID,energy_ring_ID,fusion_wheel_ID,spin_track_ID,performance_tip_ID
+BB-88,Meteo L Drago,Attack,0,Metal Masters,L-Drago II FB,L-Drago II,Meteo,LW105,LF
+BB-70,Galaxy Pegasus,Attack,0,Metal Masters,Pegasus II FB,Pegasus II,Galaxy,W105,R2F
+BB-30,Rock Leone,Defense,0,Metal Fusion,Leone I FB,Leone,Rock,145,WB
+BB-126,Flash Saggitario,Stamina,0,Metal Fury,Sagittario III FB,Sagittario II,Flash,230,WD
+BB-118,Phantom Orion,Stamina,0,Metal Fury,Orion FB,Orion,Phantom,B:D Track,B:D
+BB-60,Earth Virgo,Balance,0,Metal Fusion,Virgo FB,Virgo,Earth,GB145,BS
+BB-104,Twisted Tempo,Defense,0,Metal Masters,Tempo FB,Tempo,Twisted,145,WD
+BB-95,Flame Byxis,Balance,0,Metal Masters,Byxis FB,Byxis,Flame,230,WD

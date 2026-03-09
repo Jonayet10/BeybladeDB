@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BeybladeDB - Battles</title>
+    <link rel="stylesheet" href="/web/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <h1>BeybladeDB</h1>
+          <p class="muted">Battles, tournaments, and leaderboard.</p>
+        </div>
+        <div class="nav-links">
+          <a href="/beyblades-page">Beyblades</a>
+          <a href="/battles-page">Battles</a>
+          <a href="#" id="btnLogout">Logout</a>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Leaderboard</h2>
+        <div class="msg" id="leaderboardMsg"></div>
+        <div class="table-scroll leaderboard-scroll" id="leaderboardTable"></div>
+      </section>
+
+      <section class="card">
+        <h2>Tournaments By Location</h2>
+
+        <div class="row" style="margin-top: 14px;">
+          <input
+            id="locationForTournaments"
+            type="text"
+            list="locationSuggestions"
+            placeholder="Start typing a battle location"
+          />
+          <datalist id="locationSuggestions"></datalist>
+
+          <button id="btnLoadTournamentsByLocation">View Tournaments</button>
+        </div>
+
+        <div class="msg" id="tournamentsMsg"></div>
+        <div class="table-scroll" id="tournamentsTable"></div>
+      </section>
+      
+      <section class="card">
+        <h2>Tournament Results</h2>
+        <div class="row">
+          <input id="tournamentNameForResults" type="text" placeholder="Enter Tournament Name" />
+          <button id="btnTournamentResults">View Tournament Results</button>
+        </div>
+        <div class="msg" id="resultsMsg"></div>
+        <div class="table-scroll" id="resultsTable"></div>
+      </section>
+
+      <script src="/web/app.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BeybladeDB - Beyblades</title>
+    <link rel="stylesheet" href="/web/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <h1>BeybladeDB</h1>
+          <p class="muted">Beyblades, parts, and your collection.</p>
+        </div>
+        <div class="nav-links">
+          <a href="/beyblades-page">Beyblades</a>
+          <a href="/battles-page">Battles</a>
+          <a href="#" id="btnLogout">Logout</a>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Browse Beyblades</h2>
+        <div class="row">
+          <label class="label" for="filterType">Type</label>
+          <input id="filterType" type="text" placeholder="e.g. Attack" />
+
+          <label class="label" for="filterSeries">Series</label>
+          <input id="filterSeries" type="text" placeholder="e.g. Metal Masters" />
+
+          <button id="btnLoadBeyblades">Load Beyblades</button>
+        </div>
+        <div class="msg" id="beybladesMsg"></div>
+        <div class="table-scroll" id="beybladesTable"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>My Collection</h2>
+          <button id="btnToggleCollection" class="secondary">Hide</button>
+        </div>
+        <div class="msg" id="collectionMsg"></div>
+        <div class="table-scroll" id="collectionTableWrap">
+          <div id="collectionTable"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Parts</h2>
+
+        <div class="row">
+          <button id="btnLoadParts">View All Parts</button>
+          <input id="partsFilterType" type="text" placeholder="optional part type" />
+          <input id="partsSearch" type="text" placeholder="optional description search" />
+        </div>
+        <div class="msg" id="partsMsg"></div>
+        <div class="table-scroll" id="partsTable"></div>
+
+        <div class="row" style="margin-top: 14px;">
+          <input id="beybladeIdForParts" type="text" placeholder="Enter Beyblade ID" />
+          <button id="btnLoadBeybladeParts">View Parts For Beyblade</button>
+        </div>
+        <div class="msg" id="beyPartsMsg"></div>
+        <div class="table-scroll" id="beyPartsTable"></div>
+
+        <div class="row" style="margin-top: 14px;">
+          <input id="partIdLookup" type="text" placeholder="Enter Part ID" />
+          <button id="btnLoadPartById">View Part Weight & Description</button>
+        </div>
+        <div class="msg" id="partLookupMsg"></div>
+        <div class="table-scroll" id="partLookupTable"></div>
+
+        <div class="row" style="margin-top: 14px;">
+          <input id="heaviestType" type="text" placeholder="Enter Beyblade Type" />
+          <button id="btnHeaviestByType">Heaviest Beyblade For Type</button>
+        </div>
+        <div class="msg" id="heaviestMsg"></div>
+        <div class="table-scroll" id="heaviestTable"></div>
+      </section>
+
+      <div id="addModalBackdrop" class="modal-backdrop hidden" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
+          <div class="modal-header">
+            <div>
+              <div id="addModalTitle" class="modal-title">Add to Collection</div>
+              <div id="addModalSubtitle" class="modal-subtitle"></div>
+            </div>
+            <button id="btnCloseAddModal" class="modal-x" aria-label="Close">×</button>
+          </div>
+
+          <div class="modal-body">
+            <label class="label" for="modalCondition">Condition</label>
+            <input id="modalCondition" type="text" value="Like New" />
+            <div class="msg" id="addModalMsg"></div>
+          </div>
+
+          <div class="modal-footer">
+            <button id="btnCancelAdd" class="secondary">Cancel</button>
+            <button id="btnConfirmAdd">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <script src="/web/app.js"></script>
+    </div>
+  </body>
+</html>
