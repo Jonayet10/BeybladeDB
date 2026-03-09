@@ -79,7 +79,7 @@ This script will
 
 Start the FastAPI server with the following command:
 
-    uvicorn main:app --reload
+    uvicorn api.main:app --reload
 
 By default, the server will start at:
     http://127.0.0.1:8000
